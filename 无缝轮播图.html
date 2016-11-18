@@ -131,7 +131,7 @@
             aLi[i].className = "";
         }
         aLi[index == aLi.length ? 0 : index].className = "selected";
-        animate(oContent, {left: -aImg[0].offsetWidth * index})
+        animate(oContent, {left: -aImg[0].offsetWidth * index});
     }
     ;
     oNext.onclick = function () {
@@ -141,25 +141,25 @@
             iNow = 1;
         }
         changeImg(iNow);
-    }
-    oPrev.onclick = function(){
+    };
+    oPrev.onclick = function () {
         iNow--;
-        if(iNow ==-1){//再点Inow的值就变成-1，当inow变成-1时，让oContent的left移到最后的位置
-            oContent.style.left = -aLi.length*aImg[0].offsetWidth+"px";//往左移，left值是负的
-            iNow =3;//现在索引是第0个让他变成第三个就是第四个图片
+        if (iNow == -1) {//再点Inow的值就变成-1，当inow变成-1时，让oContent的left移到最后的位置
+            oContent.style.left = -aLi.length * aImg[0].offsetWidth + "px";//往左移，left值是负的
+            iNow = 3;//现在索引是第0个让他变成第三个就是第四个图片
         }
         changeImg(iNow);
     };
-    timer = setInterval(function(){
+    timer = setInterval(function () {
         oNext.onclick();
-    },1000);
-    oContainer.onmouseover = function(){
+    }, 1000);
+    oContainer.onmouseover = function () {
         clearInterval(timer);
     };
-    oContainer.onmouseout = function(){
-        timer = setInterval(function(){
+    oContainer.onmouseout = function () {
+        timer = setInterval(function () {
             oNext.onclick();
-        },1000);
+        }, 1000);
     };
 </script>
 </body>
